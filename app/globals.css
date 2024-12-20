@@ -106,28 +106,28 @@
 
 @layer base {
   body {
-    @apply bg-tilableSL font-sarabun;
+    @apply bg-tilableSL font-sarabun text-foreground;
   }
   h1 {
-    @apply font-kobenhavn text-xxxl;
+    @apply font-kobenhavn text-xxxl text-foreground;
   }
   h2 {
-    @apply font-kobenhavn text-xxl;
+    @apply font-kobenhavn text-xxl text-foreground;
   }
   h3 {
-    @apply font-kobenhavn text-xl;
+    @apply font-kobenhavn text-xl text-foreground;
   }
   h4 {
-    @apply font-kobenhavn text-lg;
+    @apply font-kobenhavn text-lg text-foreground;
   }
   h5 {
-    @apply font-kobenhavn text-md;
+    @apply font-kobenhavn text-md text-foreground;
   }
   h6 {
-    @apply font-kobenhavn text-base;
+    @apply font-kobenhavn text-base text-foreground;
   }
   p, li, small, a {
-    @apply font-sarabun text-base;
+    @apply font-sarabun text-base text-foreground;
   }
 }
 

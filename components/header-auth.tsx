@@ -1,7 +1,7 @@
 import { signOutAction } from "@/lib/actions/forms/user-login";
 import Link from "next/link";
 import { Button } from "./shadcn/button";
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/supabase/server";
 
 export default async function AuthButton() {
   const supabase = await createClient();

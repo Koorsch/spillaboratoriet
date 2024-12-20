@@ -1,4 +1,4 @@
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/supabase/server";
 import { redirect } from "next/navigation";
 
 export default async function ProtectedPage() {
@@ -10,11 +10,13 @@ export default async function ProtectedPage() {
     return redirect("/sign-in");
   }
   return (
-    <div className="flex-1 w-full flex flex-col gap-12">
-      <div className="flex flex-col gap-2 items-start">
-        <h2 className="font-bold text-2xl mb-2">Dine detaljer</h2>
-        <h3>Work in progress!</h3>
-      </div>
+<section>
+    <div className="p-8 w-full text-center">
+        <h1 className="text-2xl md:text-3xl font-bold mb-4">Velkommen til dit Dashboard</h1>
+        <p className="mb-6">
+            Her kan du fremover administrere dine aktiviteter, oprette nye begivenheder, ændre eksisterende og få et komplet overblik over din kalender. Vi arbejder på at gøre funktionerne klar – indtil da kan du udforske platformen og lære, hvordan det hele fungerer.
+        </p>
     </div>
+</section>
   );
 }

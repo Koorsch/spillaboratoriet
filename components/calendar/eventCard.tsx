@@ -2,7 +2,7 @@ import { Event } from "@/utils/types/db";
 
 export default async function EventCard ({event}: {event: Event}) {
   return (
-    <div className="event-card">
+    <div id="event-card" className="border border-dotted p-2 ">
       <h2>{event.e_name}</h2>
       <p><strong>Event ID:</strong> {event.e_id}</p>
       <p><strong>Created At:</strong> {new Date(event.e_created_at).toLocaleString()}</p>

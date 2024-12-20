@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/shadcn/button";
 import { type ComponentProps } from "react";
 import { useFormStatus } from "react-dom";
 
@@ -10,7 +10,7 @@ type Props = ComponentProps<typeof Button> & {
 
 export function SubmitButton({
   children,
-  pendingText = "Submitting...",
+  pendingText = "Sender...",
   ...props
 }: Props) {
   const { pending } = useFormStatus();

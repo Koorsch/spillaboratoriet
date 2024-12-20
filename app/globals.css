@@ -4,8 +4,10 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --textLIGHT: 40, 40%, 90%; /* light tan */
+    --background: 41, 85%, 66%; /* sl orange*/
+    --textDARK: 240, 100%, 10%; /* dark blue */
+    --foreground: 198, 39%, 20%; /* teal light blue */
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
@@ -24,16 +26,14 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
     --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+
   }
 
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 41, 85%, 66%; /* sl orange*/
+    --foreground: 198, 39%, 20%; /* teal light blue */
+    --textLIGHT: 40, 40%, 90%;
+    --textDARK: 240, 100%, 10%;
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;
@@ -51,19 +51,95 @@
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+
+  }
+}
+
+/* For browsers that support clamp  */
+@supports (font-size: clamp(1rem, 1vi, 1rem)) {
+  :root {
+		--fs-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
+		--fs-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+		--fs-md: clamp(1.25rem, 0.61vi + 1.1rem, 1.58rem);
+		--fs-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
+		--fs-xl: clamp(1.95rem, 1.56vi + 1.56rem, 2.81rem);
+		--fs-xxl: clamp(2.44rem, 2.38vi + 1.85rem, 3.75rem);
+		--fs-xxxl: clamp(3.05rem, 3.54vi + 2.17rem, 5rem);
+  }
+}
+/* For browsers that dont support clamp */
+@supports not (font-size: clamp(1rem, 1vi, 1rem)) {
+  :root {
+		--fs-sm: 0.8rem;
+		--fs-base: 1rem;
+		--fs-md: 1.25rem;
+		--fs-lg: 1.56rem;
+		--fs-xl: 1.95rem;
+		--fs-xxl: 2.44rem;
+		--fs-xxxl: 3.05rem;
+  }
+  @media screen and (min-width: 1280px) {
+    :root {
+    --fs-sm: 0.89rem;
+    --fs-base: 1.19rem;
+    --fs-md: 1.58rem;
+    --fs-lg: 2.11rem;
+    --fs-xl: 2.81rem;
+    --fs-xxl: 3.75rem;
+    --fs-xxxl: 5rem;
+    }
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-tilableSL font-sarabun;
   }
+  h1 {
+    @apply font-kobenhavn text-xxxl;
+  }
+  h2 {
+    @apply font-kobenhavn text-xxl;
+  }
+  h3 {
+    @apply font-kobenhavn text-xl;
+  }
+  h4 {
+    @apply font-kobenhavn text-lg;
+  }
+  h5 {
+    @apply font-kobenhavn text-md;
+  }
+  h6 {
+    @apply font-kobenhavn text-base;
+  }
+  p, li, small, a {
+    @apply font-sarabun text-base;
+  }
+}
+
+@layer components {
+  .sl-container__outer {
+    margin: 0 0.5rem;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    background-color: orange;
+    border-radius: 1rem;
+    border: 1px black solid;
+    box-shadow: 0 0.1rem 3px 0.1rem rgba(128, 128, 128, 0.418);
+  }
+  .sl-container__inner {
+    min-width: fit-content;
+    min-height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.2rem;
+    padding: 1rem;
+    border: 2px solid gray;
+    background-color: rgb(247, 246, 246);
+    border-radius: 1rem;
+    }
+    .active {
+      text-decoration: underline;
+    }
 }

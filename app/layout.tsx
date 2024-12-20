@@ -38,7 +38,7 @@ export default function LandingPage({
       <body className="w-full h-full m-auto">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >

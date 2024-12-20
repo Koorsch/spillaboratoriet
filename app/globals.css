@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
+[data-theme="light"] {
+  --foreground: 198, 39%, 20%; /* teal light blue */
+  --background: 41, 85%, 66%; /* sl orange*/
+}
+[data-theme="dark"] {
+  --background: 240, 100%, 10%; /* dark blue */
+  --foreground: 40, 40%, 90%; /* light tan */
+
+}
 @layer base {
   :root {
     --textLIGHT: 40, 40%, 90%; /* light tan */
@@ -40,7 +53,7 @@
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
+    --secondary: 0 0% 22%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
@@ -131,6 +144,7 @@
   .sl-container__inner {
     min-width: fit-content;
     min-height: fit-content;
+    max-height: 80dvh;
     display: flex;
     flex-wrap: wrap;
     margin: 0.2rem;
